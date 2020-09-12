@@ -1,13 +1,14 @@
 @import 'styles/shared.scss';
 
-.TodoEditor {
-  width: 600px;
+.FilmEditor {
+  width: 500px;
   display: flex;
   flex-direction: column;
   padding: 16px;
   border: 1px solid #000000;
   border-radius: 4px;
   margin-bottom: 20px;
+  margin: auto;
 }
 
 .TodoEditor__textarea {
@@ -23,13 +24,16 @@
 }
 
 .TodoEditor__button {
-  width: 100%;
+  width: 200px;
+  border: none;
   margin-left: auto;
   border-radius: 4px;
   padding: 12px 24px;
   background-color: #6b5472;
   color: #fff;
   font-weight: 500;
+  margin: auto;
+  margin-top: 30px;
 
   &:hover,
   &:focus {
@@ -39,4 +43,11 @@
   &:active {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   }
+}
+.Film__input {
+  height: 25px;
+}
+
+.Film__input + .Film__input {
+  margin-top: 20px;
 }

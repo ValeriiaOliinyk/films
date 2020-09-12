@@ -62,7 +62,7 @@ class FilmsList extends Component {
 
     return (
       <>
-        <div className="Home__buttons">
+        <div className="Films__buttons">
           <IconButton onClick={toggleModal}>
             <AddIcon />
           </IconButton>
@@ -70,10 +70,10 @@ class FilmsList extends Component {
             <SortIcon />
           </IconButton>
         </div>
-        <ul>
+        <ul className="Films__list">
           {films.length > 0 &&
             films.map(film => (
-              <li key={film.id}>
+              <li key={film.id} className="Films__item">
                 <h2>{film.Title}</h2>
                 {film.id === filmId && (
                   <Info onClose={onCloseInformation}>

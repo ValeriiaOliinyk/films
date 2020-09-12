@@ -1,1 +1,30 @@
 @import 'styles/shared.scss';
+
+.Films__buttons {
+  width: 200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Films__list {
+  list-style-type: none;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.Films__item {
+  box-shadow: 0px 1px 6px 3px rgba(0, 0, 0, 0.75);
+  width: 70%;
+  height: 60px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.Films__item + .Films__item {
+  margin-top: 20px;
+}

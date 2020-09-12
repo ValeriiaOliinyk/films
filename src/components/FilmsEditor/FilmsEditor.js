@@ -36,13 +36,14 @@ class FilmsEditor extends Component {
   render() {
     const { Title, Relese, Format, Stars } = this.state;
     return (
-      <form className="TodoEditor" onSubmit={this.handleSubmit}>
+      <form className="FilmEditor" onSubmit={this.handleSubmit}>
         <input
           name="Title"
           value={Title}
           placeholder="Title"
           onChange={this.updateFilms}
           required
+          className="Film__input"
         />
         <input
           name="Relese"
@@ -50,6 +51,7 @@ class FilmsEditor extends Component {
           placeholder="Release Year"
           onChange={this.updateFilms}
           required
+          className="Film__input"
         />
         <input
           name="Format"
@@ -57,6 +59,7 @@ class FilmsEditor extends Component {
           placeholder="Format"
           onChange={this.updateFilms}
           required
+          className="Film__input"
         />
         <input
           name="Stars"
@@ -64,9 +67,10 @@ class FilmsEditor extends Component {
           placeholder="Stars"
           onChange={this.updateFilms}
           required
+          className="Film__input"
         />
         <button type="submit" className="TodoEditor__button">
-          Сохранить
+          Save
         </button>
       </form>
     );
