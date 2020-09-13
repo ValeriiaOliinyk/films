@@ -1,6 +1,6 @@
 @import 'styles/shared.scss';
 
-.Modal__backdrop {
+.Info__backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +9,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.Modal__content {
+.Info__content {
   position: absolute;
   top: 50%;
   left: 50%;
