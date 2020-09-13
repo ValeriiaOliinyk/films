@@ -1,7 +1,5 @@
 import React from 'react';
-
-// Views
-import Homeview from './views/HomeView/HomeView';
+import Homeview from './views/HomeView';
 
 function App() {
   return <Homeview />;

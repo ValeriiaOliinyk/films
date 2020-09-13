@@ -23,11 +23,6 @@ class FilmsEditor extends Component {
   handleSubmit = e => {
     const { Title, Relese, Format, Stars } = this.state;
     e.preventDefault();
-    // if (Title || Relese ||Format || Stars === '') {
-    //   alert(`Заполните все поля`);
-    //   this.reset();
-    //   return;
-    // }
     this.props.onSubmit(Title, Relese, Format, Stars);
     this.props.onCloseModal();
     this.reset();
@@ -36,43 +31,46 @@ class FilmsEditor extends Component {
   render() {
     const { Title, Relese, Format, Stars } = this.state;
     return (
-      <form className="FilmEditor" onSubmit={this.handleSubmit}>
-        <input
-          name="Title"
-          value={Title}
-          placeholder="Title"
-          onChange={this.updateFilms}
-          required
-          className="Film__input"
-        />
-        <input
-          name="Relese"
-          value={Relese}
-          placeholder="Release Year"
-          onChange={this.updateFilms}
-          required
-          className="Film__input"
-        />
-        <input
-          name="Format"
-          value={Format}
-          placeholder="Format"
-          onChange={this.updateFilms}
-          required
-          className="Film__input"
-        />
-        <input
-          name="Stars"
-          value={Stars}
-          placeholder="Stars"
-          onChange={this.updateFilms}
-          required
-          className="Film__input"
-        />
-        <button type="submit" className="TodoEditor__button">
-          Save
-        </button>
-      </form>
+      <>
+        <h2 className="FilmEditor__title">Add film</h2>
+        <form className="FilmEditor" onSubmit={this.handleSubmit}>
+          <input
+            name="Title"
+            value={Title}
+            placeholder="Title"
+            onChange={this.updateFilms}
+            required
+            className="Film__input"
+          />
+          <input
+            name="Relese"
+            value={Relese}
+            placeholder="Release Year"
+            onChange={this.updateFilms}
+            required
+            className="Film__input"
+          />
+          <input
+            name="Format"
+            value={Format}
+            placeholder="Format"
+            onChange={this.updateFilms}
+            required
+            className="Film__input"
+          />
+          <input
+            name="Stars"
+            value={Stars}
+            placeholder="Stars"
+            onChange={this.updateFilms}
+            required
+            className="Film__input"
+          />
+          <button type="submit" className="FilmsEditor__button">
+            Save
+          </button>
+        </form>
+      </>
     );
   }
 }

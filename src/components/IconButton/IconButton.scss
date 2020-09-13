@@ -5,16 +5,21 @@
   padding: 10px;
   border: none;
   border-radius: 50%;
-  color: #fff;
+  color: $white-color;
   font: inherit;
-  background-color: #6b5472;
+  background-color: $main-color;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transform: scale(0.8);
+  transition: background-color 250ms linear;
 
   &:focus {
     outline: none;
+  }
+
+  &:hover {
+    background-color: $hover-color;
   }
 }

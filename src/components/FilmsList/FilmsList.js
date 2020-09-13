@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './FilmsList.scss';
 import { connect } from 'react-redux';
 import filmsOperations from '../../redux/films/films-operations';
+import filmsSelectors from '../../redux/films/films-selectors';
 
 // Components
 import Info from '../../components/Info';
@@ -10,6 +11,7 @@ import { ReactComponent as DeleteIcon } from '../../icons/trash.svg';
 import { ReactComponent as Infocon } from '../../icons/information.svg';
 import { ReactComponent as AddIcon } from '../../icons/plus.svg';
 import { ReactComponent as SortIcon } from '../../icons/sort.svg';
+import NoResults from '../NoResults';
 
 class FilmsList extends Component {
   state = { sortByName: false };
@@ -71,18 +73,28 @@ class FilmsList extends Component {
           </IconButton>
         </div>
         <ul className="Films__list">
-          {films.length > 0 &&
+          {films.length > 0 ? (
             films.map(film => (
               <li key={film.id} className="Films__item">
                 <h2>{film.Title}</h2>
                 {film.id === filmId && (
                   <Info onClose={onCloseInformation}>
-                    <h3>Title: {film.Title}</h3>
-                    <p>Release Year: {film['Release Year'] || film.Relese}</p>
-                    <p>Format: {film.Format}</p>
-                    <p>Stars: {film.Stars}</p>
-                    <p>Id: {film.id}</p>
-                    <button onClick={onCloseInformation}>Close</button>
+                    <h3 className="Films__title">Title: {film.Title}</h3>
+                    <p>
+                      <span className="Films__release">Release Year: </span>
+                      {film['Release Year'] || film.Relese}
+                    </p>
+                    <p>
+                      <span className="Films__release">Format: </span>
+                      {film.Format}
+                    </p>
+                    <p>
+                      <span className="Films__release">Stars: </span>
+                      {film.Stars}
+                    </p>
+                    <button onClick={onCloseInformation} className="Films__btn">
+                      Close
+                    </button>
                   </Info>
                 )}
                 <div>
@@ -94,30 +106,19 @@ class FilmsList extends Component {
                   </IconButton>
                 </div>
               </li>
-            ))}
+            ))
+          ) : (
+            <NoResults />
+          )}
         </ul>
       </>
     );
   }
 }
 
-const getFiltredFilms = (allFilms, filter) => {
-  const normalizedFilter = filter.toLowerCase();
-  return allFilms.filter(
-    film =>
-      film.Title.toLowerCase().includes(normalizedFilter) ||
-      film.Stars.toLowerCase().includes(normalizedFilter),
-  );
-};
-
-const mapStateToProps = state => {
-  const { films, filter } = state.films;
-  const filtredFilms = getFiltredFilms(films, filter);
-
-  return {
-    films: filtredFilms,
-  };
-};
+const mapStateToProps = state => ({
+  films: filmsSelectors.getFiltredFilms(state),
+});
 
 const mapDispatchToProps = dispatch => ({
   onDelete: id => dispatch(filmsOperations.deleteFilm(id)),

@@ -28,3 +28,30 @@
 .Films__item + .Films__item {
   margin-top: 20px;
 }
+
+.Films__title {
+  text-align: center;
+  font-size: 24px;
+}
+
+.Films__release {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.Films__btn {
+  display: block;
+  width: 100px;
+  height: 30px;
+  margin: auto;
+  margin-top: 30px;
+  cursor: pointer;
+  background-color: $main-color;
+  transition: background-color 250ms linear;
+  border: none;
+  color: $white-color;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}

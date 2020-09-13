@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { changeFilter } from '../../redux/films/films-actions';
 import PropTypes from 'prop-types';
+import filmsSelectors from '../../redux/films/films-selectors';
 import './Search.scss';
 
 const Search = ({ onChange, value }) => {
@@ -26,7 +27,7 @@ Search.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  value: state.films.filter,
+  value: filmsSelectors.getFilter(state),
 });
 
 const mapDispatchToProps = dispatch => ({

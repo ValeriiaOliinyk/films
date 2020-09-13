@@ -28,10 +28,29 @@ const loading = createReducer(false, {
   [addFilmRequest]: () => true,
   [addFilmSuccess]: () => false,
   [addFilmError]: () => false,
+  [fetchFilmRequest]: () => true,
+  [fetchFilmError]: () => false,
+  [fetchFilmSuccess]: () => false,
+  [deleteFilmRequest]: () => true,
+  [deleteFilmError]: () => false,
+  [deleteFilmSuccess]: () => false,
+});
+
+const error = createReducer(false, {
+  [addFilmRequest]: () => false,
+  [addFilmSuccess]: () => false,
+  [addFilmError]: () => true,
+  [fetchFilmRequest]: () => false,
+  [fetchFilmError]: () => true,
+  [fetchFilmSuccess]: () => false,
+  [deleteFilmRequest]: () => false,
+  [deleteFilmError]: () => true,
+  [deleteFilmSuccess]: () => false,
 });
 
 export default combineReducers({
   films,
   filter,
   loading,
+  error,
 });
