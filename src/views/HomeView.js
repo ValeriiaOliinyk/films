@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import filmsOperations from '../redux/films/films-operations';
+import PropTypes from 'prop-types';
 
 // Components
 import Container from '../components/Container';
@@ -13,70 +14,61 @@ import MainLoader from '../components/MainLoader';
 import Error from '../components/Error';
 import filmsSelectors from '../redux/films/films-selectors';
 
-class HomeView extends Component {
-  state = {
-    showModal: false,
-    sortFilms: false,
-    id: '',
-    information: '',
+const HomeView = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [id, setId] = useState('');
+
+  const dispatch = useDispatch();
+  const isLoading = useSelector(filmsSelectors.getLoading);
+  const errorMessage = useSelector(filmsSelectors.getError);
+
+  useEffect(() => {
+    dispatch(filmsOperations.fetchFilms());
+  }, [dispatch]);
+
+  const toggleModal = () => {
+    setShowModal(prevShowModal => !prevShowModal);
   };
 
-  componentDidMount() {
-    this.props.fetchFilms();
-  }
-
-  componentWillUnmount() {
-    this.setState({ sortFilms: false });
-  }
-
-  toggleModal = () => {
-    this.setState(({ showModal }) => ({
-      showModal: !showModal,
-    }));
+  const onShowInfo = id => {
+    setId(id);
   };
 
-  onShowInfo = id => {
-    this.setState({ id });
+  const onCloseInfo = () => {
+    setId('');
   };
 
-  onCloseInfo = () => {
-    this.setState({ id: '' });
-  };
+  return (
+    <Container>
+      {showModal && (
+        <Modal onClose={toggleModal}>
+          <FilmsEditor onCloseModal={toggleModal} />
+        </Modal>
+      )}
+      <Search />
+      {isLoading && <MainLoader />}
+      <Title />
+      {errorMessage && <Error />}
+      <FilmsList
+        onShow={onShowInfo}
+        onCloseInformation={onCloseInfo}
+        filmId={id}
+        toggleModal={toggleModal}
+      />
+    </Container>
+  );
+};
 
-  render() {
-    const { showModal, id } = this.state;
-    const { isLoading, errorMessage } = this.props;
-    return (
-      <Container>
-        {showModal && (
-          <Modal onClose={this.toggleModal}>
-            <FilmsEditor onCloseModal={this.toggleModal} />
-          </Modal>
-        )}
-        <Search />
-        {isLoading && <MainLoader />}
-        <Title />
-        {errorMessage && <Error />}
-        <FilmsList
-          onShow={this.onShowInfo}
-          onCloseInformation={this.onCloseInfo}
-          filmId={id}
-          toggleModal={this.toggleModal}
-        />
-      </Container>
-    );
-  }
-}
+HomeView.defaultProps = {
+  fetchFilms: () => null,
+  showModal: null,
+  id: null,
+};
 
-const mapStateToProps = state => ({
-  films: filmsSelectors.getFilms(state),
-  filter: filmsSelectors.getFilter(state),
-  isLoading: filmsSelectors.getLoading(state),
-  errorMessage: filmsSelectors.getError(state),
-});
+HomeView.propTypes = {
+  showModal: PropTypes.bool,
+  id: PropTypes.string,
+  fetchFilms: PropTypes.func,
+};
 
-const mapDispatchToProps = dispatch => ({
-  fetchFilms: () => dispatch(filmsOperations.fetchFilms()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomeView);
+export default HomeView;

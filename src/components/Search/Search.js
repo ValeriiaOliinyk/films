@@ -1,11 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { changeFilter } from '../../redux/films/films-actions';
 import PropTypes from 'prop-types';
 import filmsSelectors from '../../redux/films/films-selectors';
+import { useDispatch, useSelector } from 'react-redux';
 import './Search.scss';
 
-const Search = ({ onChange, value }) => {
+const Search = () => {
+  const value = useSelector(filmsSelectors.getFilter);
+  const dispatch = useDispatch();
+  const onChange = e => dispatch(changeFilter(e.currentTarget.value));
   return (
     <header className="Searchbar">
       <form className="SearchForm">
@@ -21,17 +24,14 @@ const Search = ({ onChange, value }) => {
   );
 };
 
-Search.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+Search.defaultProps = {
+  onChange: () => null,
+  value: null,
 };
 
-const mapStateToProps = state => ({
-  value: filmsSelectors.getFilter(state),
-});
+Search.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};
 
-const mapDispatchToProps = dispatch => ({
-  onChange: e => dispatch(changeFilter(e.currentTarget.value)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default Search;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
+import PropTypes from 'prop-types';
 import './Info.scss';
 
 const modalRoot = document.querySelector('#modal-info-root');
@@ -34,3 +35,7 @@ export default class Info extends Component {
     );
   }
 }
+
+Info.propTypes = {
+  children: PropTypes.node.isRequired,
+};
