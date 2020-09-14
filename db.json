@@ -36,193 +36,144 @@
       "Stars": "Paul Newman, Robert Redford, Katherine Ross"
     },
     {
-      "id": 7,
+      "id": 6,
       "Title": "The Sting",
       "Release Year": 1973,
       "Format": "DVD",
       "Stars": "Robert Redford, Paul Newman, Robert Shaw, Charles Durning"
     },
     {
-      "id": 9,
+      "id": 7,
       "Title": "The Muppet Movie",
       "Release Year": 1979,
       "Format": "DVD",
       "Stars": "Jim Henson, Frank Oz, Dave Geolz, Mel Brooks, James Coburn, Charles Durning, Austin Pendleton"
     },
     {
-      "id": 10,
+      "id": 8,
       "Title": "Get Shorty",
       "Release Year": 1995,
       "Format": "DVD",
       "Stars": "John Travolta, Danny DeVito, Renne Russo, Gene Hackman, Dennis Farina"
     },
     {
-      "id": 11,
+      "id": 9,
       "Title": "My Cousin Vinny",
       "Release Year": 1992,
       "Format": "DVD",
       "Stars": "Joe Pesci, Marrisa Tomei, Fred Gwynne, Austin Pendleton, Lane Smith, Ralph Macchio"
     },
     {
-      "id": 12,
+      "id": 10,
       "Title": "Gladiator",
       "Release Year": 2000,
       "Format": "Blu-Ray",
       "Stars": "Russell Crowe, Joaquin Phoenix, Connie Nielson"
     },
     {
-      "id": 13,
+      "id": 11,
       "Title": "Star Wars",
       "Release Year": 1977,
       "Format": "Blu-Ray",
       "Stars": "Harrison Ford, Mark Hamill, Carrie Fisher, Alec Guinness, James Earl Jones"
     },
     {
-      "id": 14,
+      "id": 12,
       "Title": "Raiders of the Lost Ark",
       "Release Year": 1981,
       "Format": "DVD",
       "Stars": "Harrison Ford, Karen Allen"
     },
     {
-      "id": 15,
+      "id": 13,
       "Title": "Serenity",
       "Release Year": 2005,
       "Format": "Blu-Ray",
       "Stars": "Nathan Fillion, Alan Tudyk, Adam Baldwin, Ron Glass, Jewel Staite, Gina Torres, Morena Baccarin, Sean Maher, Summer Glau, Chiwetel Ejiofor"
     },
     {
-      "id": 16,
+      "id": 14,
       "Title": "Hooisers",
       "Release Year": 1986,
       "Format": "VHS",
       "Stars": "Gene Hackman, Barbara Hershey, Dennis Hopper"
     },
     {
-      "id": 17,
+      "id": 15,
       "Title": "WarGames",
       "Release Year": 1983,
       "Format": "VHS",
       "Stars": "Matthew Broderick, Ally Sheedy, Dabney Coleman, John Wood, Barry Corbin"
     },
     {
-      "id": 18,
+      "id": 16,
       "Title": "Spaceballs",
       "Release Year": 1987,
       "Format": "DVD",
       "Stars": "Bill Pullman, John Candy, Mel Brooks, Rick Moranis, Daphne Zuniga, Joan Rivers"
     },
     {
-      "id": 19,
+      "id": 17,
       "Title": "Young Frankenstein",
       "Release Year": 1974,
       "Format": "VHS",
       "Stars": "Gene Wilder, Kenneth Mars, Terri Garr, Gene Hackman, Peter Boyle"
     },
     {
-      "id": 20,
+      "id": 18,
       "Title": "Real Genius",
       "Release Year": 1985,
       "Format": "VHS",
       "Stars": "Val Kilmer, Gabe Jarret, Michelle Meyrink, William Atherton"
     },
     {
-      "id": 21,
+      "id": 19,
       "Title": "Top Gun",
       "Release Year": 1986,
       "Format": "DVD",
       "Stars": "Tom Cruise, Kelly McGillis, Val Kilmer, Anthony Edwards, Tom Skerritt"
     },
     {
-      "id": 22,
+      "id": 20,
       "Title": "MASH",
       "Release Year": 1970,
       "Format": "DVD",
       "Stars": "Donald Sutherland, Elliot Gould, Tom Skerritt, Sally Kellerman, Robert Duvall"
     },
     {
-      "id": 23,
+      "id": 21,
       "Title": "The Russians Are Coming",
       "Release Year": 1966,
       "Format": "VHS",
       "Stars": "Carl Reiner, Eva Marie Saint, Alan Arkin, Brian Keith"
     },
     {
-      "id": 24,
+      "id": 22,
       "Title": "Jaws",
       "Release Year": 1975,
       "Format": "DVD",
       "Stars": "Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary "
     },
     {
-      "id": 25,
+      "id": 23,
       "Title": "2001: A Space Odyssey",
       "Release Year": 1968,
       "Format": "DVD",
       "Stars": "Keir Dullea, Gary Lockwood, William Sylvester, Douglas Rain"
     },
     {
-      "id": 26,
+      "id": 24,
       "Title": "Harvey",
       "Release Year": 1950,
       "Format": "DVD",
       "Stars": "James Stewart, Josephine Hull, Peggy Dow, Charles Drake"
     },
     {
-      "id": 27,
+      "id": 25,
       "Title": "Knocked Up",
       "Release Year": 2007,
       "Format": "Blu-Ray",
       "Stars": "Seth Rogen, Katherine Heigl, Paul Rudd, Leslie Mann"
-    },
-    {
-      "Title": "Lost",
-      "Relese": "2020",
-      "Format": "DVD",
-      "Stars": "Fergie Mikson, David Blanch",
-      "id": 35
-    },
-    {
-      "Title": "Mumy",
-      "Relese": "2020",
-      "Format": "DVD",
-      "Stars": "Fergie Mikson, David Blanch",
-      "id": 38
-    },
-    {
-      "Title": "Game of Thrones",
-      "Relese": "2020",
-      "Format": "DVD",
-      "Stars": "Fergie Mikson, David Blanch",
-      "id": 39
-    },
-    {
-      "Title": "Masters",
-      "Relese": "2020",
-      "Format": "DVD",
-      "Stars": "Fergie Mikson, David Blanch",
-      "id": 42
-    },
-    {
-      "Title": "Holly Molly-Amb",
-      "Relese": "2020",
-      "Format": "DVD",
-      "Stars": "Fergie Mikson, David Blanch",
-      "id": 44
-    },
-    {
-      "Title": "Patric",
-      "Relese": "2020",
-      "Format": "DVD",
-      "Stars": "Fergie Mikson, David Blanch",
-      "id": 45
-    },
-    {
-      "Title": "Dragon",
-      "Relese": "2020",
-      "Format": "DVD",
-      "Stars": "Fergie Mikson, David Blanch",
-      "id": 46
     }
   ]
 }
